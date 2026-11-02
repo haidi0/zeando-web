@@ -1,0 +1,119 @@
+/* ============================================================
+   zeanDO · 设计令牌
+   来源：02-设计\视觉规范\视觉规范手册.md v1.2（§0/§3/§4/§5/§9）
+   纪律：只允许使用本文件定义的令牌值，禁止在业务样式里写规范外的魔法值
+   ============================================================ */
+
+:root {
+  /* —— 纸与墨（§0） —— */
+  --paper: #FAF7F2;
+  --paper-sunken: #F3EFE7;
+  --card: #FFFFFF;
+  --ink: #2B2620;
+  --ink-title: #241D15;
+  --ink-secondary: #6B6459;
+  --ink-faint: #8C857A; /* 仅图标/装饰/≥18sp 大字，禁正文（§2.6） */
+
+  /* —— 一点橘（§2.2 白名单制） —— */
+  --brick: #C2552B;
+  --brick-text: #9E4423;
+  --brick-tint: #F4E7DE;
+
+  /* —— 功能色（图形级 / 文字级成对） —— */
+  --moss: #4E7A51;
+  --moss-text: #3C6140;
+  --straw: #C99A2E;
+  --straw-text: #8A6510;
+  --madder: #A63A3A;
+  --dai: #3F5E78;
+  --dai-text: #33506B;
+
+  /* —— 线与影 —— */
+  --line: rgba(43, 38, 32, 0.12);
+  --line-strong: rgba(43, 38, 32, 0.24);
+  --shadow-card: 0 1px 3px rgba(43, 38, 32, 0.07);
+
+  /* —— 字体（§3.1，系统栈） —— */
+  --font-body: -apple-system, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  /* 展示衬线：仅用于 ≥24px 的日期戳 / 大标题 / 倒计时（手册 §3.1 否决宋体指小字号正文；
+     大字展示面衬线是「纸感·日刊」的字体声音，2026-11-02 精修增补） */
+  --font-display: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+
+  /* —— 字阶（§3.2） —— */
+  --fs-display: 40px;  --lh-display: 1.1;
+  --fs-h1: 24px;       --lh-h1: 1.33;
+  --fs-h2: 18px;       --lh-h2: 1.44;
+  --fs-h3: 16px;       --lh-h3: 1.5;
+  --fs-body: 16px;     --lh-body: 1.6;
+  --fs-body-s: 14px;   --lh-body-s: 1.57;
+  --fs-label: 14px;    --lh-label: 1.43;
+  --fs-caption: 12px;  --lh-caption: 1.5;
+
+  /* —— 间距（§4.1，4dp 基准） —— */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+
+  /* —— 圆角（§5.1） —— */
+  --r-xs: 4px;
+  --r-s: 8px;
+  --r-m: 12px;
+  --r-l: 16px;
+  --r-full: 999px;
+
+  /* —— 动效（§9.1） —— */
+  --dur-press: 120ms;
+  --dur-micro: 200ms;
+  --dur-page: 320ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* —— 布局 —— */
+  --page-pad: 16px;
+  --tabbar-h: 56px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* —— 课程色板（§2.5，8 色马克笔色） —— */
+  --course-1: #C2552B; --course-1-text: #9E4423; /* 砖橘 */
+  --course-2: #4E7A51; --course-2-text: #3C6140; /* 苔绿 */
+  --course-3: #3F5E78; --course-3-text: #33506B; /* 黛蓝 */
+  --course-4: #C99A2E; --course-4-text: #8A6510; /* 藤黄 */
+  --course-5: #7A5570; --course-5-text: #7A5570; /* 绛紫 */
+  --course-6: #5E7B8A; --course-6-text: #4A6572; /* 青灰 */
+  --course-7: #6B705C; --course-7-text: #6B705C; /* 橄榄 */
+  --course-8: #8A5A3B; --course-8-text: #8A5A3B; /* 栗棕 */
+}
+
+[data-theme="dark"] {
+  --paper: #1C1916;
+  --paper-sunken: #211D19;
+  --card: #26221D;
+  --ink: #EDE7DE;
+  --ink-title: #F2EDE5;
+  --ink-secondary: #A79E92;
+  --ink-faint: #A79E92; /* 深色下弱化色并入次要色（§2.1） */
+
+  --brick: #D97E50;
+  --brick-text: #D97E50;
+  --brick-tint: #38302A;
+
+  --moss: #8FAE8F;    --moss-text: #8FAE8F;
+  --straw: #D4AE5A;   --straw-text: #D4AE5A;
+  --madder: #D98A7A;
+  --dai: #8FA9BF;     --dai-text: #8FA9BF;
+
+  --line: rgba(237, 231, 222, 0.14);
+  --line-strong: rgba(237, 231, 222, 0.28);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* ≥414dp 页面训边距 20（§4.1） */
+@media (min-width: 414px) {
+  :root { --page-pad: 20px; }
+}
