@@ -138,9 +138,12 @@ body::before {
 .section-head .more {
   border: none; background: none; cursor: pointer;
   font-size: var(--fs-caption); color: var(--brick-text);
-  font-family: inherit; padding: var(--sp-1) 0 var(--sp-1) var(--sp-2);
+  font-family: inherit; padding: 0 0 0 var(--sp-2);
   border-radius: var(--r-xs);
   flex-shrink: 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 /* 次级页返回键：同样去 UA 默认样式 */
 .page-head .more {
